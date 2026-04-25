@@ -1,234 +1,139 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SOSELETRICISTA | Eletricista Residencial 24h</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0a0a0a; color: #f8fafc; margin: 0; }
 
-  <title>Eletricista em Ribas do Rio Pardo | Instalação e Manutenção de Portões</title>
+        .glass-header { 
+            background: rgba(10, 10, 10, 0.9); 
+            backdrop-filter: blur(12px); 
+            border-bottom: 2px solid #eab308; 
+        }
+        
+        .btn-yellow {
+            background: linear-gradient(135deg, #eab308, #ca8a04);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-yellow:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(234, 179, 8, 0.5); }
 
-  <meta name="description" content="Eletricista em Ribas do Rio Pardo. Instalação elétrica, manutenção, portões eletrônicos e serviços rápidos com preço justo. Fale no WhatsApp.">
-  <meta name="author" content="Seu Nome ou Marca">
+        .card-service {
+            background: rgba(23, 23, 23, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #eab308;
+        }
 
-  <meta property="og:title" content="Eletricista em Ribas do Rio Pardo">
-  <meta property="og:description" content="Instalação elétrica e portões eletrônicos com atendimento rápido.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="eletrica.jpg">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    :root {
-      --primary:#0D47A1;
-      --bg:#F4F6F3;
-      --text:#1F1F1F;
-      --cta:#FF9800;
-    }
-
-    body {
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-
-    section {
-      padding:35px 20px;
-      text-align:center;
-    }
-
-    .hero {
-      padding:35px 20px 25px;
-      background: linear-gradient(180deg, #F4F6F3 0%, #FFFFFF 100%);
-    }
-
-    .hero-content {
-      max-width:480px;
-      margin:auto;
-    }
-
-    .hero h1 {
-      font-size:26px;
-      font-weight:600;
-      margin-bottom:8px;
-    }
-
-    .hero p {
-      font-size:14px;
-      color:#555;
-      margin-bottom:15px;
-    }
-
-    .botao {
-      display:block;
-      width:250px;
-      margin:0 auto 15px;
-      background:linear-gradient(135deg,#FF9800,#FF6F00);
-      color:#fff;
-      padding:12px 0;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    .slider-novo {
-      width:250px;
-      margin:15px auto 0;
-      position:relative;
-    }
-
-    .slider-novo img {
-      width:100%;
-      border-radius:10px;
-    }
-
-    .slider-label {
-      position:absolute;
-      top:6px;
-      left:6px;
-      background:#000;
-      color:#fff;
-      padding:3px 6px;
-      border-radius:4px;
-      font-size:11px;
-    }
-
-    h2 {
-      font-size:20px;
-      color:var(--primary);
-      margin-bottom:10px;
-    }
-
-    .card {
-      background:#fff;
-      padding:15px;
-      border-radius:8px;
-      max-width:360px;
-      margin:0 auto;
-      font-size:14px;
-      line-height:1.5;
-    }
-
-    /* RESULTADOS */
-    .resultados {
-      overflow: hidden;
-    }
-
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding:10px;
-    }
-
-    .par {
-      display: flex;
-      min-width: 100%;
-      gap:10px;
-      scroll-snap-align: start;
-    }
-
-    .par img {
-      width:50%;
-      border-radius:8px;
-      object-fit:cover;
-    }
-
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      bottom: 18px;
-      right: 18px;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      animation: pulse 2s infinite;
-      z-index: 99999;
-    }
-
-    .whatsapp img {
-      width:34px;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow:0 0 0 0 rgba(37,211,102,0.5); }
-      70% { box-shadow:0 0 0 12px rgba(37,211,102,0); }
-      100% { box-shadow:0 0 0 0 rgba(37,211,102,0); }
-    }
-
-  </style>
+        .glow-yellow {
+            position: absolute;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.1) 0%, rgba(10, 10, 10, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
+    <header class="fixed w-full z-50 glass-header py-3 px-4 md:px-12 flex justify-between items-center">
+        <div class="text-xl md:text-2xl font-extrabold tracking-tighter flex items-center gap-2">
+            <i class="fas fa-bolt text-yellow-500"></i>
+            <span class="uppercase">SOS<span class="text-yellow-500">ELETRICISTA</span></span>
+        </div>
+        <a href="https://wa.me/5567981194737" class="btn-yellow px-5 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest">
+            URGÊNCIA
+        </a>
+    </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Eletricista em Ribas do Rio Pardo com atendimento rápido e profissional</h1>
-    <p>Instalações elétricas, manutenção e portões eletrônicos</p>
+    <section class="relative pt-32 pb-12 px-6 flex flex-col items-center overflow-hidden">
+        <div class="glow-yellow w-[500px] h-[500px] -top-20 -left-20"></div>
+        
+        <div class="max-w-7xl mx-auto w-full text-center">
+            <div data-aos="fade-up">
+                <h1 class="text-[36px] md:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight">
+                    Pane elétrica?<br><span class="text-yellow-500 italic">Eu resolvo agora.</span>
+                </h1>
+                
+                <div class="relative max-w-2xl mx-auto mb-10 shadow-2xl rounded-[2.5rem] overflow-hidden border border-white/10">
+                    <img src="eletricista.jpg" alt="Eletricista Residencial Profissional" class="w-full h-[250px] md:h-[400px] object-cover">
+                    <div class="absolute top-4 right-4 bg-black/80 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-yellow-500 border border-yellow-500/30 uppercase">
+                        Disponível agora
+                    </div>
+                </div>
 
-    <a href="https://wa.me/5567981194737?text=Olá,%20preciso%20de%20eletricista" class="botao">
-      Solicitar atendimento
+                <p class="text-slate-400 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+                    Atendimento especializado em curto-circuito, troca de fiação, quadros de energia e instalações em geral com total segurança.
+                </p>
+                
+                <a href="https://wa.me/5567981194737" class="btn-yellow py-5 px-12 rounded-2xl font-black text-lg inline-block w-full md:w-max uppercase tracking-widest">
+                    SOLICITAR ELETRICISTA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="card-service p-8 rounded-2xl" data-aos="fade-up">
+                <i class="fas fa-plug text-yellow-500 text-2xl mb-4 block"></i>
+                <h3 class="font-bold mb-2 uppercase text-sm tracking-widest">Reparos Urgentes</h3>
+                <p class="text-slate-500 text-sm">Busca de curto-circuito e restauração de energia imediata.</p>
+            </div>
+            
+            <div class="card-service p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-bolt-lightning text-yellow-500 text-2xl mb-4 block"></i>
+                <h3 class="font-bold mb-2 uppercase text-sm tracking-widest">Quadro de Luz</h3>
+                <p class="text-slate-500 text-sm">Troca de disjuntores, barramentos e organização de painéis.</p>
+            </div>
+            
+            <div class="card-service p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-house-signal text-yellow-500 text-2xl mb-4 block"></i>
+                <h3 class="font-bold mb-2 uppercase text-sm tracking-widest">Instalações</h3>
+                <p class="text-slate-500 text-sm">Chuveiros, ventiladores, luminárias e tomadas novas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-zinc-900/50 border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-black mb-8 italic uppercase">Segurança em <span class="text-yellow-500">Primeiro Lugar</span></h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check text-yellow-500"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Norma NBR 5410</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check text-yellow-500"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Peças de Qualidade</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check text-yellow-500"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Garantia do Serviço</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center">
+        <div class="text-slate-600 text-[10px] uppercase tracking-[0.3em]">
+            © 2026 SOSELETRICISTA • Profissional Qualificado
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5567981194737" class="fixed bottom-6 right-6 bg-[#25d366] w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(37,211,102,0.4)] z-50 transition-transform hover:scale-110">
+        <i class="fab fa-whatsapp text-white"></i>
     </a>
 
-    <div class="slider-novo">
-      <img id="slideImg" src="eletrica1.jpg" alt="Serviço elétrico">
-      <div class="slider-label" id="slideLabel">Serviço</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Serviços</h2>
-  <div class="card">
-    Instalação elétrica residencial • Manutenção • Troca de disjuntores •
-    Portões eletrônicos • Automatização • Reparos urgentes
-  </div>
-</section>
-
-<section>
-  <h2>Antes e Depois</h2>
-
-  <div class="resultados">
-    <div class="slider">
-
-      <div class="par">
-        <img src="antes1.jpg" alt="Instalação antes">
-        <img src="depois1.jpg" alt="Instalação depois">
-      </div>
-
-      <div class="par">
-        <img src="antes2.jpg" alt="Portão antes">
-        <img src="depois2.jpg" alt="Portão depois">
-      </div>
-
-    </div>
-  </div>
-
-  <p style="font-size:13px; color:#666; max-width:500px; margin:10px auto;">
-    Serviços elétricos em Ribas do Rio Pardo com qualidade, segurança e agilidade.
-  </p>
-</section>
-
-<a href="https://wa.me/5567981194737?text=Olá,%20preciso%20de%20eletricista" class="whatsapp">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</a>
-
-<script>
-const imagens = ["eletrica1.jpg","eletrica2.jpg"];
-let index = 0;
-
-setInterval(() => {
-  index++;
-  if(index >= imagens.length) index = 0;
-  document.getElementById("slideImg").src = imagens[index];
-}, 2500);
-</script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init({ duration: 800, once: true }); </script>
 </body>
 </html>
