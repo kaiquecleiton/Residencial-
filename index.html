@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/// ACESSO RESTRITO ///</title>
-    <!-- Fonte estilo terminal militar/hacker -->
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Acesso Íntimo VIP</title>
+    <!-- Fontes Premium: Playfair para elegância, Montserrat para leitura -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Share Tech Mono', monospace;
         }
 
         body {
-            background-color: #050505; /* Preto ainda mais profundo */
-            color: #ff003c; /* Vermelho alerta/neon */
+            /* Fundo com gradiente sensual: preto e vinho escuro */
+            background: radial-gradient(circle at 50% 30%, #3a0011 0%, #050002 80%);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,158 +28,173 @@
             position: relative;
         }
 
-        /* Efeito de TV antiga/Câmera de segurança (Scanlines) */
-        body::before {
-            content: " ";
-            display: block;
+        /* Efeito de fumaça/sombra no fundo para dar mistério */
+        body::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.1;
             pointer-events: none;
         }
 
         .container {
             width: 100%;
-            max-width: 450px;
-            background: #0a0a0a;
-            border: 1px solid #ff003c;
-            padding: 30px;
+            max-width: 400px;
+            /* Efeito Glassmorphism (Vidro esfumaçado) */
+            background: rgba(20, 0, 5, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 51, 102, 0.2);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
             position: relative;
             z-index: 10;
-            box-shadow: 0 0 20px rgba(255, 0, 60, 0.2), inset 0 0 10px rgba(255, 0, 60, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 51, 102, 0.05);
         }
 
-        /* Cabeçalho do sistema */
-        .sys-header {
-            font-size: 12px;
-            color: #555;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .blink {
-            animation: blinker 1s linear infinite;
-            color: #00ff41; /* Verde indicando conexão segura */
-        }
-
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
-
-        /* Títulos */
-        h1 {
-            font-size: 24px;
-            text-transform: uppercase;
+        /* Ícone intimista */
+        .icon-top {
+            font-size: 35px;
             margin-bottom: 15px;
-            text-shadow: 0 0 5px rgba(255, 0, 60, 0.5);
+            filter: drop-shadow(0 0 10px rgba(255, 51, 102, 0.6));
+        }
+
+        /* Títulos e Textos */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            font-style: italic;
+            color: #ff3366; /* Rosa/Vermelho suave */
+            margin-bottom: 10px;
             letter-spacing: 1px;
         }
 
-        .warning-text {
-            color: #d4d4d4;
+        .subtitle {
             font-size: 14px;
+            color: #d1b3bb;
+            font-weight: 300;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .highlight {
-            color: #ff003c;
-            font-weight: bold;
-            text-decoration: underline;
+            font-weight: 700;
+            color: #fff;
         }
 
-        /* Botão Glitch/Hacker */
-        .btn-secreto {
+        /* Botão Sedutor e Chamativo */
+        .btn-vip {
             display: block;
             width: 100%;
-            background-color: #ff003c;
-            color: #050505;
-            text-align: center;
+            background: linear-gradient(135deg, #ff0044 0%, #990022 100%);
+            color: #ffffff;
             text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 15px;
+            font-weight: 700;
             padding: 20px;
+            border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border: none;
-            cursor: pointer;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 0, 68, 0.4);
             position: relative;
-            transition: all 0.2s ease;
+            overflow: hidden;
         }
 
-        .btn-secreto:hover {
-            background-color: #ff3366;
-            box-shadow: 0 0 15px #ff003c;
+        .btn-vip:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 0, 68, 0.6);
         }
 
-        /* Elemento de Escassez - Cronômetro falso */
-        .timer-container {
+        /* Efeito de brilho passando pelo botão */
+        .btn-vip::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255,255,255,0.3);
+            transform: rotate(35deg);
+            transition: all 0.5s ease;
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -60%; }
+            20% { left: 120%; }
+            100% { left: 120%; }
+        }
+
+        /* Escassez elegante */
+        .scarcity {
             margin-top: 25px;
-            text-align: center;
-            font-size: 13px;
-            color: #888;
+            font-size: 12px;
+            color: #a88;
+        }
+
+        .timer-box {
+            display: inline-block;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 12px;
+            border-radius: 10px;
+            margin-top: 8px;
+            border: 1px solid rgba(255, 51, 102, 0.1);
         }
 
         .timer {
-            font-size: 18px;
-            color: #ff003c;
-            font-weight: bold;
-            margin-top: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #ff3366;
         }
 
-        /* Ícone de cadeado feito com CSS */
-        .lock-icon {
-            font-size: 40px;
-            text-align: center;
-            margin-bottom: 15px;
-            display: block;
+        /* Cadeado sutil */
+        .privacy-note {
+            margin-top: 30px;
+            font-size: 10px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="sys-header">
-            <span>ID: 884.2A</span>
-            <span class="blink">● CONEXÃO CRIPTOGRAFADA</span>
-        </div>
-
-        <span class="lock-icon">🔒</span>
-
-        <h1>[ ARQUIVO CONFIDENCIAL ]</h1>
+        <div class="icon-top">🤫</div>
         
-        <p class="warning-text">
-            Você está prestes a acessar a <strong>área restrita</strong>. Todo o conteúdo que o Instagram censurou foi movido para um cofre seguro no Telegram.<br><br>
-            <span class="highlight">Regra #1:</span> O que é postado lá dentro, não vaza.<br>
-            <span class="highlight">Regra #2:</span> O acesso ao grupo ficará oculto em breve.
+        <h1>O meu lado mais íntimo...</h1>
+        
+        <p class="subtitle">
+            Você encontrou o meu esconderijo. Um lugar sem regras, sem censura do Instagram e <span class="highlight">estritamente confidencial</span>.<br><br>
+            Acesse meu grupo privado no Telegram antes que as vagas se esgotem.
         </p>
 
         <!-- COLOQUE AQUI O SEU LINK DE CONVITE DO TELEGRAM -->
-        <a href="[SEU LINK DO TELEGRAM AQUI]" class="btn-secreto">
-            > DESTRAVAR ACESSO AGORA_
+        <a href="[SEU LINK DO TELEGRAM AQUI]" class="btn-vip">
+            🔥 Quero Ver Tudo
         </a>
 
-        <div class="timer-container">
-            O link de convite se autodestrói em:
-            <div class="timer" id="countdown">04:59</div>
+        <div class="scarcity">
+            Convite expira em: <br>
+            <div class="timer-box">
+                <span class="timer" id="countdown">03:59</span>
+            </div>
+        </div>
+
+        <div class="privacy-note">
+            🔒 100% Discreto & Anônimo
         </div>
     </div>
 
-    <!-- Script para o Cronômetro de Urgência -->
+    <!-- Script para o Cronômetro -->
     <script>
-        // Cria uma falsa escassez de 5 minutos
-        let tempo = 299; // 4 minutos e 59 segundos
+        // Tempo de 4 minutos para gerar urgência natural
+        let tempo = 239; 
         const elementoTimer = document.getElementById('countdown');
 
         const intervalo = setInterval(() => {
@@ -191,10 +207,8 @@
             if (tempo > 0) {
                 tempo--;
             } else {
-                elementoTimer.innerHTML = "LINK EXPIRADO";
-                elementoTimer.style.color = "#555";
-                // Opcional: Você pode esconder o botão aqui quando o tempo zerar
-                // document.querySelector('.btn-secreto').style.display = 'none';
+                elementoTimer.innerHTML = "00:00";
+                elementoTimer.style.color = "#666";
                 clearInterval(intervalo);
             }
         }, 1000);
