@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso Íntimo VIP</title>
-    <!-- Fontes Premium: Playfair para elegância, Montserrat para leitura -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Clube VIP - Acervo Secreto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,700&family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -15,7 +14,7 @@
         }
 
         body {
-            /* Fundo com gradiente sensual: preto e vinho escuro */
+            /* Fundo com gradiente sensual e profundo */
             background: radial-gradient(circle at 50% 30%, #3a0011 0%, #050002 80%);
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
@@ -28,7 +27,6 @@
             position: relative;
         }
 
-        /* Efeito de fumaça/sombra no fundo para dar mistério */
         body::after {
             content: '';
             position: absolute;
@@ -40,8 +38,7 @@
 
         .container {
             width: 100%;
-            max-width: 400px;
-            /* Efeito Glassmorphism (Vidro esfumaçado) */
+            max-width: 420px;
             background: rgba(20, 0, 5, 0.4);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -54,22 +51,34 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 51, 102, 0.05);
         }
 
-        /* Ícone intimista */
-        .icon-top {
-            font-size: 35px;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 10px rgba(255, 51, 102, 0.6));
+        /* Badge de Autoridade */
+        .badge-premium {
+            background: rgba(255, 51, 102, 0.15);
+            color: #ff3366;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 6px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 51, 102, 0.3);
+            letter-spacing: 2px;
         }
 
         /* Títulos e Textos */
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 600;
+            font-size: 26px;
+            font-weight: 700;
             font-style: italic;
-            color: #ff3366; /* Rosa/Vermelho suave */
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            color: #ffffff; 
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: #ff3366;
         }
 
         .subtitle {
@@ -77,12 +86,32 @@
             color: #d1b3bb;
             font-weight: 300;
             line-height: 1.6;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .highlight {
             font-weight: 700;
             color: #fff;
+            text-decoration: underline;
+            text-decoration-color: #ff3366;
+        }
+
+        /* Features/Benefícios rápidos */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+
+        .features div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         /* Botão Sedutor e Chamativo */
@@ -92,12 +121,12 @@
             background: linear-gradient(135deg, #ff0044 0%, #990022 100%);
             color: #ffffff;
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 700;
-            padding: 20px;
+            font-size: 16px;
+            font-weight: 800;
+            padding: 22px;
             border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(255, 0, 68, 0.4);
             position: relative;
@@ -109,7 +138,6 @@
             box-shadow: 0 12px 25px rgba(255, 0, 68, 0.6);
         }
 
-        /* Efeito de brilho passando pelo botão */
         .btn-vip::after {
             content: '';
             position: absolute;
@@ -152,7 +180,6 @@
             color: #ff3366;
         }
 
-        /* Cadeado sutil */
         .privacy-note {
             margin-top: 30px;
             font-size: 10px;
@@ -165,36 +192,44 @@
 <body>
 
     <div class="container">
-        <div class="icon-top">🤫</div>
         
-        <h1>O meu lado mais íntimo...</h1>
+        <div class="badge-premium">🔥 O Maior Acervo do Telegram</div>
+        
+        <h1>O lado oculto das <span>Criadoras</span>...</h1>
         
         <p class="subtitle">
-            Você encontrou o meu esconderijo. Um lugar sem regras, sem censura do Instagram e <span class="highlight">estritamente confidencial</span>.<br><br>
-            Acesse meu grupo privado no Telegram antes que as vagas se esgotem.
+            Você encontrou o cofre. O lugar exato onde as modelos mais cobiçadas escondem tudo aquilo que as redes sociais não deixam você ver.<br><br>
+            <span class="highlight">Centenas de vídeos amadores e explícitos.</span> Atualizado todos os dias.
         </p>
+
+        <!-- Gatilhos de Benefício Rápido -->
+        <div class="features">
+            <div>✔️ Sem Censura</div>
+            <div>✔️ +50 Modelos</div>
+            <div>✔️ Atualização Diária</div>
+        </div>
 
         <!-- COLOQUE AQUI O SEU LINK DE CONVITE DO TELEGRAM -->
         <a href="[SEU LINK DO TELEGRAM AQUI]" class="btn-vip">
-            🔥 Quero Ver Tudo
+            😈 Destravar Acervo VIP
         </a>
 
         <div class="scarcity">
-            Convite expira em: <br>
+            O link de convite será fechado em:<br>
             <div class="timer-box">
-                <span class="timer" id="countdown">03:59</span>
+                <span class="timer" id="countdown">04:59</span>
             </div>
         </div>
 
         <div class="privacy-note">
-            🔒 100% Discreto & Anônimo
+            🔒 Acesso 100% Discreto & Anônimo
         </div>
     </div>
 
     <!-- Script para o Cronômetro -->
     <script>
-        // Tempo de 4 minutos para gerar urgência natural
-        let tempo = 239; 
+        // Tempo de 5 minutos
+        let tempo = 299; 
         const elementoTimer = document.getElementById('countdown');
 
         const intervalo = setInterval(() => {
