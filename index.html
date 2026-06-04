@@ -3,178 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso Exclusivo - VIP</title>
-    <!-- Fonte de alta conversão (Google Fonts) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>/// ACESSO RESTRITO ///</title>
+    <!-- Fonte estilo terminal militar/hacker -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS focado em conversão: Cores escuras e botões chamativos */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Share Tech Mono', monospace;
         }
 
         body {
-            background-color: #0a0a0a; /* Fundo preto puro para destacar botões */
-            color: #ffffff;
+            background-color: #050505; /* Preto ainda mais profundo */
+            color: #ff003c; /* Vermelho alerta/neon */
             display: flex;
             justify-content: center;
+            align-items: center;
             min-height: 100vh;
             padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Efeito de TV antiga/Câmera de segurança (Scanlines) */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
         }
 
         .container {
             width: 100%;
-            max-width: 420px; /* Tamanho perfeito para telas de celular */
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* Foto de Perfil */
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ff0055; /* Borda rosa neon */
-            box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
-            margin-bottom: 20px;
-        }
-
-        /* Copy Aggressiva - Títulos */
-        .headline {
-            font-size: 22px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-
-        .headline span {
-            color: #ff0055; /* Destaque no gatilho mental */
-        }
-
-        .sub-headline {
-            font-size: 14px;
-            color: #aaaaaa;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        /* Botões de Conversão */
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .btn {
-            display: block;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 16px;
-            padding: 18px 20px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            max-width: 450px;
+            background: #0a0a0a;
+            border: 1px solid #ff003c;
+            padding: 30px;
             position: relative;
-            overflow: hidden;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.2), inset 0 0 10px rgba(255, 0, 60, 0.1);
         }
 
-        /* O botão principal precisa "gritar" para ser clicado */
-        .btn-vip {
-            background: linear-gradient(45deg, #ff0055, #ff00aa);
-            box-shadow: 0 5px 15px rgba(255, 0, 85, 0.4);
-            animation: pulsar 2s infinite; /* Animação para chamar atenção */
-        }
-
-        .btn-vip:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 0, 85, 0.6);
-        }
-
-        /* Botões secundários */
-        .btn-secondary {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-        }
-
-        .btn-secondary:hover {
-            background-color: #2a2a2a;
-            border-color: #ff0055;
-        }
-
-        /* Animação do botão principal */
-        @keyframes pulsar {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        /* Badges de prova social/urgência */
-        .badge {
-            background-color: #fff;
-            color: #000;
-            font-size: 11px;
-            font-weight: 900;
-            padding: 3px 8px;
-            border-radius: 20px;
-            position: absolute;
-            top: -10px;
-            right: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-
-        .footer {
-            margin-top: 40px;
+        /* Cabeçalho do sistema */
+        .sys-header {
             font-size: 12px;
             color: #555;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: space-between;
         }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+            color: #00ff41; /* Verde indicando conexão segura */
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        /* Títulos */
+        h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(255, 0, 60, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .warning-text {
+            color: #d4d4d4;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #ff003c;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Botão Glitch/Hacker */
+        .btn-secreto {
+            display: block;
+            width: 100%;
+            background-color: #ff003c;
+            color: #050505;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secreto:hover {
+            background-color: #ff3366;
+            box-shadow: 0 0 15px #ff003c;
+        }
+
+        /* Elemento de Escassez - Cronômetro falso */
+        .timer-container {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .timer {
+            font-size: 18px;
+            color: #ff003c;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* Ícone de cadeado feito com CSS */
+        .lock-icon {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 15px;
+            display: block;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- COLOQUE O LINK DA SUA FOTO AQUI NO ATRIBUTO SRC -->
-        <img src="https://via.placeholder.com/150" alt="Sua Foto" class="profile-pic">
-
-        <!-- HEADLINE AGRESSIVA: Curiosidade + Exclusividade -->
-        <h1 class="headline">O lado que o Instagram <span>não permite</span> você ver 😈</h1>
-        
-        <!-- SUB-HEADLINE: Escassez e Quebra de Objeção -->
-        <p class="sub-headline">O que eu posto de graça é só 1%. Sem censura, chat liberado e atualizações diárias. Vagas limitadas.</p>
-
-        <div class="links-container">
-            
-            <!-- BOTÃO PRINCIPAL: Ação imediata (Call to Action principal) -->
-            <!-- COLOQUE SEU LINK DO PRIVACY/ONLYFANS NO ATRIBUTO HREF -->
-            <a href="[SEU LINK DO PRIVACY OU ONLYFANS AQUI]" class="btn btn-vip">
-                <span class="badge">🔥 RESTAM 3 VAGAS</span>
-                Destravar VIP Agora
-            </a>
-
-            <!-- BOTÃO SECUNDÁRIO 1: Ticket Médio/Alto (Conteúdo Sob Medida) -->
-            <!-- COLOQUE SEU LINK DO WHATSAPP AQUI -->
-            <a href="[SEU LINK DO WHATSAPP AQUI]" class="btn btn-secondary">
-                📲 Encomendar Vídeo Exclusivo
-            </a>
-
-            <!-- BOTÃO SECUNDÁRIO 2: Isca Digital (Para quem ainda está em dúvida) -->
-            <!-- COLOQUE SEU LINK DO TELEGRAM GRÁTIS AQUI -->
-            <a href="[SEU LINK DO GRUPO DO TELEGRAM AQUI]" class="btn btn-secondary">
-                🎁 Prévias Grátis no Telegram
-            </a>
-
+        <div class="sys-header">
+            <span>ID: 884.2A</span>
+            <span class="blink">● CONEXÃO CRIPTOGRAFADA</span>
         </div>
 
-        <div class="footer">
-            <p>🔞 Conteúdo restrito para maiores de 18 anos.</p>
+        <span class="lock-icon">🔒</span>
+
+        <h1>[ ARQUIVO CONFIDENCIAL ]</h1>
+        
+        <p class="warning-text">
+            Você está prestes a acessar a <strong>área restrita</strong>. Todo o conteúdo que o Instagram censurou foi movido para um cofre seguro no Telegram.<br><br>
+            <span class="highlight">Regra #1:</span> O que é postado lá dentro, não vaza.<br>
+            <span class="highlight">Regra #2:</span> O acesso ao grupo ficará oculto em breve.
+        </p>
+
+        <!-- COLOQUE AQUI O SEU LINK DE CONVITE DO TELEGRAM -->
+        <a href="[SEU LINK DO TELEGRAM AQUI]" class="btn-secreto">
+            > DESTRAVAR ACESSO AGORA_
+        </a>
+
+        <div class="timer-container">
+            O link de convite se autodestrói em:
+            <div class="timer" id="countdown">04:59</div>
         </div>
     </div>
+
+    <!-- Script para o Cronômetro de Urgência -->
+    <script>
+        // Cria uma falsa escassez de 5 minutos
+        let tempo = 299; // 4 minutos e 59 segundos
+        const elementoTimer = document.getElementById('countdown');
+
+        const intervalo = setInterval(() => {
+            const minutos = Math.floor(tempo / 60);
+            let segundos = tempo % 60;
+
+            segundos = segundos < 10 ? '0' + segundos : segundos;
+            elementoTimer.innerHTML = `0${minutos}:${segundos}`;
+
+            if (tempo > 0) {
+                tempo--;
+            } else {
+                elementoTimer.innerHTML = "LINK EXPIRADO";
+                elementoTimer.style.color = "#555";
+                // Opcional: Você pode esconder o botão aqui quando o tempo zerar
+                // document.querySelector('.btn-secreto').style.display = 'none';
+                clearInterval(intervalo);
+            }
+        }, 1000);
+    </script>
 
 </body>
 </html>
