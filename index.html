@@ -3,273 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube VIP - Conteúdo Privado</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,700&family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
-    
+    <title>Acesso Exclusivo - Telegram VIP</title>
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            /* Mantém o gradiente elegante e premium */
-            background: radial-gradient(circle at 50% 30%, #3a0011 0%, #050002 80%);
+            background-color: #0b0e14;
             color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
             padding: 20px;
-            overflow: hidden;
-            position: relative;
+            overflow-x: hidden;
         }
 
-        body::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.1;
-            pointer-events: none;
-        }
-
-        .container {
+        .presell-container {
             width: 100%;
-            max-width: 420px;
-            background: rgba(20, 0, 5, 0.4);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 51, 102, 0.2);
-            border-radius: 20px;
-            padding: 40px 30px;
+            max-width: 450px;
+            background: #151a24;
+            border-radius: 16px;
+            padding: 30px 20px;
             text-align: center;
-            position: relative;
-            z-index: 10;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 51, 102, 0.05);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #222d3d;
         }
 
-        /* Selo aceito pelo Google Ads */
-        .badge-premium {
-            background: rgba(255, 51, 102, 0.15);
-            color: #ff3366;
-            font-size: 11px;
-            font-weight: 900;
-            text-transform: uppercase;
-            padding: 6px 15px;
-            border-radius: 30px;
+        .badge-18 {
+            background-color: #ff3b30;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
             display: inline-block;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 51, 102, 0.3);
-            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Headline refinada para evitar filtros */
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 700;
-            font-style: italic;
-            color: #ffffff; 
-            margin-bottom: 15px;
-            line-height: 1.2;
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            color: #ffffff;
         }
 
         h1 span {
-            color: #ff3366;
+            color: #0088cc;
         }
 
         .subtitle {
             font-size: 14px;
-            color: #d1b3bb;
-            font-weight: 300;
-            line-height: 1.6;
+            color: #9aa6b5;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .status-box {
+            background: rgba(0, 136, 204, 0.1);
+            border: 1px solid rgba(0, 136, 204, 0.2);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 25px;
+            font-size: 13px;
+            color: #e1e6eb;
+        }
+
+        .status-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .status-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .online-dot {
+            color: #34c759;
+            font-weight: bold;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
             margin-bottom: 30px;
         }
 
-        .highlight {
-            font-weight: 700;
-            color: #fff;
-            text-decoration: underline;
-            text-decoration-color: #ff3366;
-        }
-
-        /* Termos comerciais seguros */
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            font-size: 11px;
-            font-weight: 700;
-            color: #aaa;
-            text-transform: uppercase;
-        }
-
-        .features div {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Botão Alta Conversão */
-        .btn-vip {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #ff0044 0%, #990022 100%);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 800;
-            padding: 22px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(255, 0, 68, 0.4);
+        .preview-card {
             position: relative;
+            aspect-ratio: 1 / 1;
+            background: #1e2633;
+            border-radius: 8px;
             overflow: hidden;
+            border: 1px solid #2c384c;
         }
 
-        .btn-vip:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(255, 0, 68, 0.6);
-        }
-
-        .btn-vip::after {
+        .preview-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 20px;
-            height: 200%;
-            background: rgba(255,255,255,0.3);
-            transform: rotate(35deg);
-            transition: all 0.5s ease;
-            animation: shine 3s infinite;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            opacity: 0.6;
+            filter: blur(15px);
+            transform: scale(1.2);
         }
 
-        @keyframes shine {
-            0% { left: -60%; }
-            20% { left: 120%; }
-            100% { left: 120%; }
+        .preview-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.6);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Escassez padrão */
-        .scarcity {
-            margin-top: 25px;
-            font-size: 12px;
-            color: #a88;
+        .preview-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: #ffffff;
         }
 
-        .timer-box {
-            display: inline-block;
-            background: rgba(0,0,0,0.5);
-            padding: 5px 12px;
-            border-radius: 10px;
-            margin-top: 8px;
-            border: 1px solid rgba(255, 51, 102, 0.1);
-        }
-
-        .timer {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            color: #ff3366;
-        }
-
-        /* Políticas obrigatórias exigidas pelo Google */
-        .privacy-note {
-            margin-top: 30px;
-            font-size: 10px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-links {
-            margin-top: 15px;
-            font-size: 11px;
-        }
-
-        .footer-links a {
-            color: #666;
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
+            color: #ffffff;
             text-decoration: none;
-            margin: 0 10px;
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4);
+            transition: transform 0.2s;
+            animation: pulse 1.8s infinite;
         }
 
-        .footer-links a:hover {
-            color: #ff3366;
+        .telegram-icon {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 136, 204, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #627285;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <div class="badge-premium">⭐ Comunidade Oficial VIP</div>
-        
-        <!-- Headline focada em mistério, sem citar termos sexuais -->
-        <h1>O canal privado das <span>Criadoras</span>...</h1>
-        
-        <!-- O cliente entende o duplo sentido, mas o robô lê apenas como "influenciadoras de internet" -->
-        <p class="subtitle">
-            Você foi convidado para o hub das criadoras mais cobiçadas da internet. Tenha acesso à rotina e aos <span class="highlight">conteúdos diários e inéditos</span> que não são publicados nas redes sociais abertas.<br><br>
-            Acesso exclusivo via aplicativo parceiro.
-        </p>
+    <div class="presell-container">
+        <span class="badge-18">🔞 Conteúdo Restrito</span>
+        <h1>Acesso Liberado ao Grupo de <span>Vazados VIP</span></h1>
+        <p class="subtitle">Mídias exclusivas, atualizações diárias e os melhores conteúdos do Telegram em um só lugar.</p>
 
-        <!-- Benefícios corporativos limpos -->
-        <div class="features">
-            <div>⭐ Feed Exclusivo</div>
-            <div>⭐ +50 Modelos</div>
-            <div>⭐ Sem Algoritmo</div>
+        <div class="preview-grid">
+            <div class="preview-card"><div class="preview-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7v3H6c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2h-1s0-3-5-3zm0 2c1.66 0 3 1.34 3 3v3H9V7c0-1.66 1.34-3 3-3z"/></svg></div></div>
+            <div class="preview-card"><div class="preview-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="preview-card"><div class="preview-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7v3H6c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2h-1s0-3-5-3zm0 2c1.66 0 3 1.34 3 3v3H9V7c0-1.66 1.34-3 3-3z"/></svg></div></div>
         </div>
 
-        <!-- COLOQUE SEU LINK DO TELEGRAM ABAIXO -->
-        <a href="https://t.me/+D1d26FhK95hlMTgx" class="btn-vip">
-            👉 Entrar no Grupo
+        <div class="status-box">
+            <div class="status-line"><span>Status do Link:</span><span class="online-dot">🟢 ATIVO & ONLINE</span></div>
+            <div class="status-line"><span>Usuários no grupo agora:</span><strong id="user-counter">4.843</strong></div>
+            <div class="status-line"><span>Vagas promocionais restantes:</span><strong style="color: #ffcc00;" id="vagas-counter">14 vagas</strong></div>
+        </div>
+
+        <a href="#" class="cta-button" id="redirect-btn">
+            <svg class="telegram-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.97-.74 3.79-1.65 6.32-2.74 7.57-3.27 3.61-1.53 4.36-1.8 4.85-1.8.11 0 .35.03.5.15.13.12.16.29.18.41z"/></svg>
+            QUERO ENTRAR NO GRUPO AGORA
         </a>
 
-        <div class="scarcity">
-            O convite de acesso expira em:<br>
-            <div class="timer-box">
-                <span class="timer" id="countdown">04:59</span>
-            </div>
-        </div>
-
-        <div class="privacy-note">
-            🔒 Acesso Seguro & Criptografado
-        </div>
-
-        <!-- Links de rodapé (O Google EXIGE que sites tenham isso para passar na revisão) -->
-        <div class="footer-links">
-            <a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a>
+        <div class="footer-text">
+            Ao clicar você confirma ter mais de 18 anos.<br>
+            Acesso 100% seguro e anônimo através do aplicativo oficial.
         </div>
     </div>
 
-    <!-- Script do Cronômetro -->
     <script>
-        let tempo = 299; 
-        const elementoTimer = document.getElementById('countdown');
+        // 🛑 CONFIGURAÇÃO: COLOQUE SEU LINK DO TELEGRAM ABAIXO
+        const URL_TELEGRAM = "https://t.me/+D1d26FhK95hlMTgx"; 
 
-        const intervalo = setInterval(() => {
-            const minutos = Math.floor(tempo / 60);
-            let segundos = tempo % 60;
+        document.getElementById('redirect-btn').href = URL_TELEGRAM;
 
-            segundos = segundos < 10 ? '0' + segundos : segundos;
-            elementoTimer.innerHTML = `0${minutos}:${segundos}`;
+        // ⚡ REDIRECIONAMENTO AUTOMÁTICO (ESTILO CLÁSSICO PRESELL)
+        // Se quiser que o usuário seja jogado para o Telegram sozinho após 5 segundos, apague as duas barras "//" da linha abaixo:
+        // setTimeout(() => { window.location.href = URL_TELEGRAM; }, 5000);
 
-            if (tempo > 0) {
-                tempo--;
-            } else {
-                elementoTimer.innerHTML = "00:00";
-                elementoTimer.style.color = "#666";
-                clearInterval(intervalo);
-            }
-        }, 1000);
+        // Contador de usuários oscilando vivo
+        setInterval(() => {
+            const userElem = document.getElementById('user-counter');
+            let currentUsers = parseInt(userElem.innerText.replace('.', ''));
+            currentUsers += Math.floor(Math.random() * 7) - 3;
+            userElem.innerText = currentUsers.toLocaleString('pt-BR');
+        }, 3000);
+
+        // Gatilho visual de perda de vaga
+        setTimeout(() => {
+            document.getElementById('vagas-counter').innerText = "2 vagas restantes";
+            document.getElementById('vagas-counter').style.color = "#ff3b30";
+        }, 6000);
     </script>
-
 </body>
 </html>
